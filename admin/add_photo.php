@@ -1,0 +1,51 @@
+<?php
+session_start();
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Add Video - RHABHIT Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+
+<?php
+require_once("includes/header.php");
+require_once("message.php");
+?>
+<h1 class="ms-2 mb-3">Add Photo</h1>
+
+<form action="cores/add_photo_core.php" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="form-floating col-md-12 mb-3">
+                <input required type="text" name="title" class="form-control" id="floatingInput"
+                    placeholder="Enter Title Here">
+                <label for="floatingInput" class="ps-4">Title</label>
+            </div>
+
+            <div class="col-md-12 mb-3">
+
+                <input class="form-control" accept="image/*" name="photo" type="file" id="formFile">
+            </div>
+
+            <div class="d-grid gap-2 col-12 mx-auto">
+                <button type="submit" name="add-photo-btn" class="btn btn-primary" type="button">Add Photo</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<?php
+require_once("includes/footer.php");
+require_once("includes/scripts.php");
+?>
